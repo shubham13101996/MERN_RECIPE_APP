@@ -1,11 +1,11 @@
 import axios from "axios";
 import React, { useState } from "react";
-import { UseGetUserId } from "../hooks/useGetUserId";
+import { useGetUserId } from "../hooks/useGetUserId";
 import { useNavigate } from "react-router-dom";
 import { useCookies } from "react-cookie";
 
 const CreateRecipe = () => {
-  const userId = UseGetUserId;
+  const userId = useGetUserId();
   const navigate = useNavigate("");
   const [cookies, _] = useCookies(["access_token"]);
   const [recipe, setRecipe] = useState({

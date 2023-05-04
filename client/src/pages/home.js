@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { axios } from "axios";
-import { UseGetUserId } from "../hooks/useGetUserId";
+import axios from "axios";
+import { useGetUserId } from "../hooks/useGetUserId";
 
 import { useCookies } from "react-cookie";
 
@@ -10,7 +10,7 @@ const Home = () => {
   const [savedRecipes, setSavedRecipes] = useState([]);
   const [cookies, _] = useCookies(["access_token"]);
 
-  const userId = UseGetUserId();
+  const userId = useGetUserId();
 
   useEffect(() => {
     const fetchRecipe = async () => {

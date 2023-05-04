@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { axios } from "axios";
-import { UseGetUserId } from "../hooks/useGetUserId";
+import axios from "axios";
+import { useGetUserId } from "../hooks/useGetUserId";
 
-const savedRecipe = () => {
+const SavedRecipe = () => {
   const [savedRecipes, setSavedRecipes] = useState([]);
 
-  const userId = UseGetUserId();
+  const userId = useGetUserId();
 
   useEffect(() => {
     const fetchSavedRecipe = async () => {
@@ -42,4 +42,4 @@ const savedRecipe = () => {
   );
 };
 
-export default savedRecipe;
+export default SavedRecipe;
