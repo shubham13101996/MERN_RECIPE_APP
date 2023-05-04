@@ -1,3 +1,4 @@
+import jwt from "jsonwebtoken";
 export const verifyToken = (req, res, next) => {
   const token = req.headers.authorization;
   if (token) {
@@ -6,6 +7,6 @@ export const verifyToken = (req, res, next) => {
       next();
     });
   } else {
-    res, sendStatus(401);
+    res.sendStatus(401);
   }
 };
